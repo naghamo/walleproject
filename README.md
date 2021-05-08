@@ -1,6 +1,7 @@
 # Walle project
 ## Downloading files
 ### Raspberry pi
+From your command line run the following commands: 
     sudo apt-get update
 #### Bluetooth
     sudo apt-get install bluetooth bluez libbluetooth-dev
