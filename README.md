@@ -1,5 +1,5 @@
-# walleproject
-## Instaling files
+# Walle project
+## Downloading files
 ### Raspberry pi
     sudo apt-get update
 #### Bluetooth
