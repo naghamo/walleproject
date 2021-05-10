@@ -13,11 +13,11 @@ From your command line run the following commands:
 Then run the following command to download the project's folder:
 
     git clone 
- Unzip the folder, put it in Desktop(optional) then run
+ Unzip the folder, put it in Desktop(optional) then run:
  
      cd Desktop/project
      nano python3 project.py
-Go to line num    and put the address of your bluetooth module
+Go to line num  47  and put the address of your bluetooth module
  
  --------------------------------------------
     
