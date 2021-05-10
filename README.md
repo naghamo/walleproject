@@ -46,10 +46,12 @@ Link:
 
     https://"IP Address":5000
     
- To open the web run the project's file in raspberry pi.
+
+To open the web run the project's file in raspberry pi.
+
 -----
 
-** #Make sure that your phone/computer and raspberry pi are connected to the same internet **
+**Make sure that your phone/computer and raspberry pi are connected to the same internet.
 
 
 
