@@ -13,11 +13,11 @@ From your command line run the following commands:
 Then run the following command to download the project's folder:
 
     git clone 
- unzip the folder, put it in Desktop(optional) then run
+ Unzip the folder, put it in Desktop(optional) then run
  
      cd Desktop/project
      nano python3 project.py
-go to line num    and put the address of your bluetooth module
+Go to line num    and put the address of your bluetooth module
  
  --------------------------------------------
     
@@ -43,11 +43,13 @@ Open the app, go to settings and change the ip address acording to your raspberr
 ### Web
 
 Link:
+
     https://"IP Address":5000
     
+ To open the web run the project's file in raspberry pi.
 -----
 
-**Make sure that your phone/computer and raspberry pi are connected to the same internet**
+** #Make sure that your phone/computer and raspberry pi are connected to the same internet **
 
 
 
