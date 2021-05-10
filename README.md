@@ -47,7 +47,7 @@ Link:
     
 -----
 
-Make sure that your phone/computer and raspberry pi are connected to the same internet
+**Make sure that your phone/computer and raspberry pi are connected to the same internet**
 
 
 
