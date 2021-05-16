@@ -18,7 +18,13 @@ Then run the following command to download the project's folder:
      cd Desktop/project
      nano python3 project.py
 Go to line num  47  and put the address of your bluetooth module
+
+     addr="xx:xx:xx:xx:xx:xx"
+     
+ Then save the changes(ctrl+x -> y -> enter) & run the file:
  
+     sudo python3 project.py
+     
  --------------------------------------------
     
 ### Arduino
@@ -34,9 +40,9 @@ Download the fllowing libraries and include them
  
 ### App
 
-Download the app in yout smartphone https://www.mediafire.com/file/tlypqw714ftirjs/WALLE.apk/file
+Download the app in your smartphone https://www.mediafire.com/file/tlypqw714ftirjs/WALLE.apk/file
 
-Open the app, go to settings and change the ip address acording to your raspberry pi
+Open the app, go to settings and change the ip address according to your raspberry pi
 
 ---------------
 
@@ -47,7 +53,7 @@ Link:
     https://"IP Address":5000
     
 
-To open the web run the project's file in raspberry pi.
+To open the web you must run the project's file in raspberry pi.
 
 -----
 
