@@ -1,0 +1,264 @@
+<html>
+	<head>
+		<title>WALL-E</title>
+	    	  
+	  <style>
+	  
+	  
+	   
+ h1{ 
+   font-size: 2rem;
+   text-align:center;
+  }
+  h2{
+  
+  text-align:center;
+  }
+p{
+  font-size: 1.3rem;
+}
+a{
+text-decoration:none;
+}
+*{
+margin:0;
+padding:0;
+
+}
+.menu{
+width: 100%;
+height: 50px;
+background-color: rgba(0,0,255,0.55);
+}
+.menu ul li {
+list-style:none;
+float: left;
+line-height:50px;
+
+}
+
+.menu ul li a{
+text-decoration: none;
+font-size:14px;
+color: #fff;
+padding:0 20px;
+display: block;
+
+}
+.menu ul li a:hover{
+color:red;
+}
+main{
+	text-align: center;
+   max-width:100%;
+   height:100%;
+   margin:0 auto;
+   background-size: 100% 100%;
+   background-image: url({{url_for('static',filename='things/Walle1.jpg')}});
+   
+  place-items: center;
+}
+
+body{
+background-size: 100% 100%;
+
+}
+video{
+width: 500px;
+}
+button{
+
+margin: 0 auto;
+border-radius: 50px;
+font-size: 1rem;
+border: none;
+}
+.buttonr{ 
+padding: 10px 20px;
+color: #fff;
+border: 4px solid #FF0000;
+
+background-color: #FF0000;
+}
+.buttonr:hover{ 
+color:FF0000;
+background-color: #FFFFFF;
+}
+
+.buttonb{
+padding: 10px 20px;
+background-color: #3498db;
+color: #FFFFFF;
+border: 4px solid #3498db;
+}
+.buttonb:hover{ 
+color:#3498db;
+background-color:#FFFFFF;
+}
+.stop{
+display:none; 
+
+	
+}
+.list{
+width: 20%;
+
+	display:block;
+	margin:0 auto;
+}
+.list ul li {
+list-style:none;
+background: #eee;
+border-top: 1px solid #ccc;
+padding: 10px 20px;
+
+}
+.list ul li:hover {
+background:#afafaf;
+}
+.list ul {
+	border-top:0px;
+margin: 10px auto;
+border: 1px solid #bbb;
+	}
+
+.goto{
+	
+	display:none; 
+}
+.follow{
+	
+	display:none; }	  
+.back{
+	display:none;
+ 
+  width: 10px;
+  color: black;
+ padding: 10px 20px;
+	margin-left: 20%;
+  font-weight: bold;
+  font-size: 20px;
+}	
+
+.back:hover{
+	
+	background-color: rgba(0, 0, 0, 0.6);
+  color:white;
+	
+	}  
+	  </style>
+	    
+	</head>
+	<body>
+				
+			<nav class="menu">
+			<ul>
+			<li><a href="http://{{ip}}:5000/">Home</a></li>
+			<li><a href="http://{{ip}}:5000/manual" style="color:red">Manual Control</a></li>
+			<li><a href="http://{{ip}}:5000/download">Download</a></li>
+			<li><a href="http://{{ip}}:5000/settings">Settings</a></li>
+
+			</ul>
+			
+			</nav>
+			<main>
+				
+				<div style="margin-left: 7; position: absolute;margin-top: 4px;   "><a href="http://{{ip}}:5000/bluetooth/manual"><img src="{{url_for('static',filename='things/bluetooth.png')}}" style="width:16px"></a> <span id="BT"  style="font-size: 1rem;" ></span></div>
+				<br> <br> <h1>Manual Control</h1> 
+				<br><br>
+				<nav class="list" id="list">
+				<ul >
+			<li onclick="follow()">Follow</li>
+			<li onclick="goto_()">Go to</li>
+
+			</ul>
+				</nav>
+				<div id="back"  class="back" onclick="back()">&#10094 </div>
+				<div id="goto" class="goto">
+				<a 
+				href="http://{{ip}}:5000/goto/b1" 
+				onclick="shows()"><button class="buttonb"> 
+				Go to blue</button></a>
+				<a 
+				href="http://{{ip}}:5000/goto/b2" 
+				onclick="shows()"><button class="buttonr"> 
+				Go to red</button></a> 
+				 </div>
+				 
+				 
+				 <div id="follow" class="follow">
+				<a 
+				href="http://{{ip}}:5000/follow/b1" 
+				onclick="shows()"><button class="buttonb"> 
+				Follow blue</button></a>
+				<a 
+				href="http://{{ip}}:5000/follow/b2" 
+				onclick="shows()"><button class="buttonr"> 
+				Follow red</button></a> 
+				 </div>
+				<br><br>
+				<div id="stopb" class="stop "> <a href="http://{{ip}}:5000/stop"><img src=" {{url_for('static',filename='things/stop.jpg')}}"  style="width:18%"> </a></div>
+				<p id="dstatus" style="display:none"> Status: <span id="status">{{status}}</span></p>
+				<br>
+				<script>
+					var b=document.getElementById("backb");
+					var BT = document.getElementById("BT");
+					var l=document.getElementById("list");
+						var ds=document.getElementById("dstatus");
+						var b=document.getElementById("back");
+						var f=document.getElementById("follow");
+						var g=document.getElementById("goto");
+						
+				function shows(){
+					var stop=document.getElementById("stopb");
+					var s=document.getElementById("status");
+					
+					s.innerHTML="on my way";
+					stop.style.display="block";
+					
+					}
+					function back()
+					{
+					f.style.display="none";
+						ds.style.display="none";
+						l.style.display="block";
+						b.style.display="none";
+						g.style.display="none";	
+					}
+					function follow(){
+						
+						f.style.display="block";
+						ds.style.display="block";
+						l.style.display="none";
+						b.style.display="block";
+					}
+				function goto_(){
+						
+						
+						g.style.display="block";
+						ds.style.display="block";
+						b.style.display="block";
+						l.style.display="none";
+					}
+					if ("{{status}}"=="stoped")
+					{
+						ds.style.display="block";
+						
+					}
+					
+					if("{{BT}}"=="True")
+					{
+					BT.innerHTML = "Bluetooth is connected";
+					BT.style.color="green";	
+					}
+					else
+					{
+					BT.innerHTML = "Bluetooth isn't connected";
+					BT.style.color="red";		
+					}
+				</script>
+			</main>
+	
+	
+	</body>
+	</html>

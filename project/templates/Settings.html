@@ -1,0 +1,274 @@
+<html>
+	<head>
+		<title>WALL-E</title>
+	    	  
+	  <style>
+	  
+	  
+	   
+ h1{ 
+   font-size: 3rem;
+   text-align:center;
+  }
+  h2{
+  
+  text-align:center;
+  }
+p{
+  font-size: 1.3rem;
+}
+a{
+text-decoration:none;
+}
+*{
+margin:0;
+padding:0;
+  
+}
+nav{
+width: 100%;
+height: 50px;
+background-color: rgba(0,0,255,0.55);
+}
+ul li {
+list-style:none;
+display: inline-block;
+float: left;
+line-height:50px;
+
+}
+ul li a{
+text-decoration: none;
+font-size:14px;
+color: #fff;
+padding:0 20px;
+display: block;
+
+}
+ul li a:hover{
+color:red;
+}
+main{
+   max-width:100%;
+   
+   margin:0 auto;
+   
+    
+  height: 100%;
+  text-align: center;
+  place-items: center;
+     background-size: 100% 100%;
+background-image: url({{url_for('static',filename='things/Walle1.jpg')}});
+
+}
+
+html,body{
+ 
+
+}
+
+video{
+width: 500px;
+}
+button{
+display: block;
+margin: 0 auto;
+border-radius: 50px;
+font-size: 1.7rem;
+border: none;
+}
+.button2{ 
+padding: 10px 20px;
+color: #002366;
+border: 4px solid #C0C0C0;
+background-color: #FFFFFF;
+}
+.button2:hover{ 
+
+background-color: #C0C0C0;
+}
+
+
+
+.sliderR{
+  -webkit-appearance: none;
+  width: 40%;
+  height: 15px;
+  border-radius: 5px;  
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.sliderR::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: red;
+  cursor: pointer;
+}
+
+.sliderR::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+.sliderR:hover {
+  opacity: 1;
+}
+.sliderG {
+  -webkit-appearance: none;
+  width: 40%;
+  height: 15px;
+  border-radius: 5px;  
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.sliderG::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: green;
+  cursor: pointer;
+}
+
+.sliderG::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+.sliderG:hover {
+  opacity: 1;
+}
+
+.sliderB {
+  -webkit-appearance: none;
+  width: 40%;
+  height: 15px;
+  border-radius: 5px;  
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.sliderB::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: blue;
+  cursor: pointer;
+}
+
+.sliderB::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+.sliderB:hover {
+  opacity: 1;
+}
+.rgbc{
+	background-color:rgb("RedV","GreenV","BlueV")
+	
+}
+#display {
+	width: 100px;
+	height:100px;
+	background:rgb({{r}},{{g}},{{b}});
+	transition:background 100ms;
+	
+	border:1px solid #000;
+	margin:0 auto;
+}
+
+	  </style>
+	</head>
+	<body>
+		
+			<nav>
+			<ul>
+			<li><a href="http://{{ip}}:5000/">Home</a></li>
+			<li><a href="http://{{ip}}:5000/manual">Manual Control</a></li>
+			<li><a href="http://{{ip}}:5000/download">Download</a></li>
+			<li><a href="http://{{ip}}:5000/settings" style="color:red">Settings</a></li>
+			
+			</ul>
+			
+			</nav>
+		<main>
+<h1>Settings</h1>
+<br> 
+<br> 
+	
+	
+	<p style="color:red">R:	<span id="RedV"></span>
+  <input type="range" min="0" max="255" value="{{r}}" class="sliderR" id="Red"></p>
+  <br> 
+  <br> 
+  <p style="color:green">G:<span id="GreenV"></span>
+  <input type="range" min="0" max="255" value="{{g}}" class="sliderG" id="Green"></p>
+  <br> 
+  <br> 
+  <p style="color:blue">B:<span id="BlueV"></span>
+  <input type="range" min="0" max="255" value="{{b}}" class="sliderB" id="Blue">
+  <br><br><br>
+  <p>Your color:</p>
+  	<p id="display"> </p>
+  	 <br> 
+  <a id="link" href="http://{{ip}}:5000/rgb/0/128/255"><button class="button2"> Done</button></a>
+
+	
+<script>
+var sliderR = document.getElementById("Red");
+var outputR = document.getElementById("RedV");
+var sliderG = document.getElementById("Green");
+var outputG = document.getElementById("GreenV");
+var sliderB = document.getElementById("Blue");
+var outputB = document.getElementById("BlueV");
+var display=document.getElementById("display");
+var link=document.getElementById("link");
+outputR.innerHTML = sliderR.value;
+outputG.innerHTML = sliderG.value;
+outputB.innerHTML = sliderB.value;
+
+sliderR.oninput = function() {
+  outputR.innerHTML = this.value;
+display.style.background="rgb("+sliderR.value+","+sliderG.value+","+sliderB.value+")";
+link.href="http://{{ip}}:5000/rgb/"+sliderR.value+"/"+sliderG.value+"/"+sliderB.value;
+}
+sliderG.oninput = function() {
+  outputG.innerHTML = this.value;
+ display.style.background="rgb("+sliderR.value+","+sliderG.value+","+sliderB.value+")";
+ link.href="http://{{ip}}:5000/rgb/"+sliderR.value+"/"+sliderG.value+"/"+sliderB.value;
+}
+sliderB.oninput = function() {
+  outputB.innerHTML = this.value;
+display.style.background="rgb("+sliderR.value+","+sliderG.value+","+sliderB.value+")";
+link.href="http://{{ip}}:5000/rgb/"+sliderR.value+"/"+sliderG.value+"/"+sliderB.value;
+}
+
+
+</script>
+</main>
+	</body>
+</html>

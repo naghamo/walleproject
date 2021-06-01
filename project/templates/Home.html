@@ -1,0 +1,116 @@
+<html>
+	<head>
+		<title>WALL-E</title>
+	     
+	  
+	  <style>
+	  
+	  
+	   
+ h1{ 
+   font-size: 2.5rem;
+   text-align:center;
+  }
+  h2{
+  
+  text-align:center;
+  }
+p{
+  font-size: 1.3rem;
+}
+a{
+text-decoration:none;
+}
+*{
+margin:0;
+padding:0;
+
+}
+nav{
+width: 100%;
+height: 50px;
+background-color: rgba(0,0,255,0.55);
+}
+ul li {
+list-style:none;
+display: inline-block;
+float: left;
+line-height:50px;
+
+}
+ul li a{
+text-decoration: none;
+font-size:14px;
+color: #fff;
+padding:0 20px;
+display: block;
+
+}
+ul li a:hover{
+color:red;
+}
+main{
+   max-width:100%;
+   height:100%;
+   margin:0 auto;
+   background-size: 100% 100%;
+   background-image: url({{url_for('static',filename='things/Walle1.jpg')}});
+   
+
+}
+
+body{
+background-size: 100% 100%;
+
+}
+video{
+width: 500px;
+}
+
+
+
+
+	  
+	  
+	  </style>
+		  
+	</head>
+		<body>
+			<nav>
+			<ul>
+			<li ><a href="http://{{ip}}:5000/"  style="color:red">Home</a></li>
+			<li><a href="http://{{ip}}:5000/manual">Manual Control</a></li>
+			<li><a href="http://{{ip}}:5000/download">Download</a></li>
+			<li><a href="http://{{ip}}:5000/settings">Settings</a></li>
+			</ul>
+			
+			</nav>
+  <main background="{{url_for('static',filename='things/Walle1.jpg')}}">
+	  <div style="margin-left: 7; position: absolute;margin-top: 4px;   "><a href="http://{{ip}}:5000/bluetooth/home"><img src="{{url_for('static',filename='things/bluetooth.png')}}" style="width:16px"></a> <span id="BT"  style="font-size: 1rem;" ></span></div>
+			<br> 
+			
+			<br> 
+			<br> 
+			<br> 
+			<h1>תיכון חקלאי ימה</h1>
+			<br> 
+			<h1>פרויקט אלקטרוניקה</h1>
+			<h2>נגם עומר</h2>
+			<h2>   2020-2021   </h2>
+			<script>
+				var BT = document.getElementById("BT");
+				if("{{BT}}"=="True")
+					{
+					BT.innerHTML = "Bluetooth is connected";
+					BT.style.color="green";	
+					}
+					else
+					{
+					BT.innerHTML = "Bluetooth isn't connected";
+					BT.style.color="red";		
+					}
+				</script>
+			</main>
+			
+	</body>
+</html>
