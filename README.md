@@ -13,7 +13,7 @@ From your command line run the following commands:
     sudo python3 -m pip install --force-reinstall adafruit-blinka
 Then run the following command to download the project's folder:
 
-    git clone https://github.com/naghamo/pi.git
+    git clone https://github.com/naghamo/pi/archive/refs/heads/main.zip
  Unzip the folder, put it in Desktop(optional) then run:
  
      cd Desktop/project
@@ -31,7 +31,7 @@ Go to line num  47  and put the address of your bluetooth module
 ### Arduino
 Download the fllowing libraries and include them 
 
- Adafruit_NeoPixel: https://github.com/adafruit/Adafruit_NeoPixel.git 
+ Adafruit_NeoPixel: https://github.com/adafruit/Adafruit_NeoPixel/archive/refs/heads/master.zip 
  
  Pixy2: https://github.com/charmedlabs/pixy2/raw/master/releases/arduino/arduino_pixy2-1.0.3.zip
  
