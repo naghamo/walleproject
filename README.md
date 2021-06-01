@@ -13,7 +13,7 @@ From your command line run the following commands:
     sudo python3 -m pip install --force-reinstall adafruit-blinka
 Then run the following command to download the project's folder:
 
-    git clone 
+    git clone https://github.com/naghamo/pi.git
  Unzip the folder, put it in Desktop(optional) then run:
  
      cd Desktop/project
