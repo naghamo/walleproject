@@ -60,7 +60,6 @@ ip_address=skt.getsockname()[0]
 skt.close()
 #*********************************
 status=True
-follow_mode=False
 #*********************************
 gyro.calcGyroOffsets()
 os.system('omxplayer /home/pi/Desktop/project/Sounds/on.wav &')
@@ -123,12 +122,9 @@ def stop():
     global stop
     stop= False
     global BT_status
-    global follow_mode
     
-    if follow_mode:
-        BT.send('stop')
     while not stop:
-        time.sleep(0.001)   
+        time.sleep(0.001) 
     stopm()
     os.system('omxplayer /home/pi/Desktop/project/Sounds/stop.wav &')
     time.sleep(1.5)
@@ -324,25 +320,6 @@ def recinfo(obj):
     BT.send(obj)
     return str(BT.recv(1024),'utf-8')
 
-
-#********************Move the robot******************************
-def move(steps):
-    gyro.update()
-    global stop
-    global status
-    stepscounter=0
-    aim=round(gyro.gangleZ(),3)
-    drive(True,True,False,False)
-    while(steps>stepscqunter):
-        stepscqunter=stepscounter+1
-        gyro.update()
-        afm=round( gyro.gangleZ())
-        if(afm!=aim):
-            turn(aim-afm)
-            drive(True,True,False,False)
-        if not status:
-            stop=True
-            return ""
     
     
 #*******************Turn the robot*******************************
