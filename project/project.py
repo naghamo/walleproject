@@ -61,11 +61,7 @@ skt.close()
 #*********************************
 status=True
 #*********************************
-gyro.calcGyroOffsets()
-os.system('omxplayer /home/pi/Desktop/project/Sounds/on.wav &')
-time.sleep(2)
-pixels.fill((0, 128, 255))
-pixels.show()
+
 
 
 web = Flask(__name__)
@@ -381,6 +377,10 @@ def stopm():
     
 #***********************************************************
 if __name__ == '__main__':
-    
+    gyro.calcGyroOffsets()
+    os.system('omxplayer /home/pi/Desktop/project/Sounds/on.wav &')
+    time.sleep(2)
+    pixels.fill((0, 128, 255))
+    pixels.show()
     web.run(debug=True, host='0.0.0.0')
     
